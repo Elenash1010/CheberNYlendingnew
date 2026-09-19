@@ -1,0 +1,85 @@
+/* One continuous illustration keeps the scene aligned while the page scrolls. */
+main {
+  position: relative;
+  background: url('assets/bg-page.jpg') center top / 100% auto no-repeat;
+  background-color: #00133A;
+}
+
+main::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(0, 11, 38, .34) 0%, rgba(0, 12, 42, .18) 42%, rgba(0, 8, 30, .5) 100%),
+    radial-gradient(circle at 50% 18%, rgba(46, 121, 212, .1), transparent 38%),
+    radial-gradient(circle at 50% 78%, rgba(224, 166, 73, .08), transparent 32%);
+}
+
+.section {
+  background: transparent !important;
+}
+
+.hero__glow {
+  z-index: 2;
+  width: 52%;
+  left: -15%;
+  top: 25%;
+  transform: none;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 247, 193, .9) 0 2%, rgba(255, 190, 54, .56) 10%, rgba(255, 147, 28, .24) 34%, transparent 76%);
+  filter: blur(8px);
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.hero__glow::before {
+  content: "";
+  position: absolute;
+  left: 47%;
+  top: 47%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff8cf;
+  box-shadow: 0 0 7px 3px #fff3ad, 0 0 22px 9px rgba(255, 181, 43, .9), 0 0 58px 25px rgba(255, 139, 26, .42);
+  transform: translate(-50%, -50%);
+  filter: blur(.2px);
+}
+
+.hero__visual::before {
+  content: "";
+  position: absolute;
+  inset: 8% 6% 4%;
+  z-index: 0;
+  border-radius: 50%;
+  background:
+    radial-gradient(ellipse at 52% 35%, rgba(132, 202, 255, .24), transparent 48%),
+    radial-gradient(ellipse at 48% 86%, rgba(245, 185, 82, .2), transparent 42%);
+  filter: blur(20px);
+  pointer-events: none;
+}
+
+.hero__visual::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: 25%;
+  bottom: 4%;
+  width: 52%;
+  height: 8%;
+  border-radius: 50%;
+  background: rgba(0, 9, 28, .55);
+  filter: blur(22px);
+  transform: rotate(-4deg);
+  pointer-events: none;
+}
+
+.hero__visual img {
+  mix-blend-mode: screen;
+  filter:
+    drop-shadow(0 34px 28px rgba(0, 0, 0, .26))
+    drop-shadow(0 0 18px rgba(111, 183, 255, .22));
+}
+
