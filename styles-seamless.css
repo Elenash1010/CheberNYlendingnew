@@ -626,6 +626,9 @@ main::before {
 .hero h1 .hero__title-text {
   display: inline-block;
   width: auto;
+  /* Extend the gradient paint area to include accents above capital letters. */
+  padding-top: .2em;
+  margin-top: -.2em;
   white-space: nowrap;
   background: linear-gradient(180deg, #ffffff 0%, #f5fbff 42%, #9ddaff 100%);
   -webkit-background-clip: text;
