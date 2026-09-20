@@ -647,7 +647,7 @@ header {
 
   .hero__grid {
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 42px;
     min-height: 0;
   }
 
@@ -662,7 +662,7 @@ header {
 
   .hero__visual {
     min-height: 0;
-    margin-top: -8px;
+    margin-top: 0;
   }
 
   .hero__visual img {
