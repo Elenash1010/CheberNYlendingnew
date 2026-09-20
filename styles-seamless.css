@@ -77,21 +77,59 @@ body {
   font-weight: 800;
 }
 
+@media (max-width: 1080px) {
+  .header .phone {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    font-size: 18px;
+  }
+
+  .header .header-actions {
+    gap: 16px;
+  }
+
+  .header .btn {
+    padding-inline: 20px;
+    font-size: 12px;
+  }
+}
+
 @media (max-width: 780px) {
   .header .container {
     width: calc(100% - 28px);
   }
 
   .header .header-inner {
-    height: 84px;
-    gap: 12px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: 48px 44px;
+    height: 112px;
+    padding-block: 8px;
+    gap: 4px 12px;
   }
 
   .header .header-actions {
-    gap: 12px;
+    display: contents;
+  }
+
+  .header .logo {
+    grid-area: 1 / 1;
+  }
+
+  .header .phone {
+    grid-area: 2 / 2;
+    justify-self: end;
+    font-size: 16px;
+  }
+
+  .header .header-vk {
+    grid-area: 2 / 1;
+    justify-self: start;
   }
 
   .header .btn {
+    grid-area: 1 / 2;
     min-height: 48px;
     padding: 12px 18px;
     font-size: 12px;
@@ -102,11 +140,6 @@ body {
   .header .logo {
     width: 88px;
     flex-shrink: 0;
-  }
-
-  .header .header-inner,
-  .header .header-actions {
-    gap: 6px;
   }
 
   .header .btn {
@@ -251,7 +284,7 @@ main::before {
 
 @media (max-width: 780px) {
   #booking {
-    scroll-margin-top: 84px;
+    scroll-margin-top: 112px;
   }
 }
 
