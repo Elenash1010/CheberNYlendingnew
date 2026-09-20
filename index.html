@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="styles-seamless.css?v=20260920-46" />
+  <link rel="stylesheet" href="styles-seamless.css?v=20260920-50" />
 </head>
 <body>
   <header class="header">
@@ -19,7 +19,7 @@
       </a>
       <div class="header-actions">
         <a class="phone" href="tel:+73412664420">8(3412) 66-44-20</a>
-        <button class="btn small" type="button">Оставить заявку</button>
+        <a class="btn small" href="#booking">Оставить заявку</a>
       </div>
     </div>
   </header>
@@ -51,6 +51,7 @@
           <article class="benefit" role="listitem"><div class="benefit__icon" aria-hidden="true"><img src="assets/Icons/Frame%204.svg" alt="" width="84" height="84" /></div><h3>Авторское меню</h3><p>Праздничная кухня от шеф-повара</p></article>
         </div>
       </div>
+      <a class="btn offers__booking" href="#booking">Забронировать прямо сейчас</a>
     </section>
 
     <section class="section venues" aria-labelledby="venues-title">
@@ -66,8 +67,8 @@
               <div class="venue-card__caption"><h3>ЧЕБЕР</h3><p>В черте города</p></div>
             </div>
             <div class="venue-card__actions">
-              <a class="btn btn--light" href="/files/cheber-menu.pdf" download aria-label="Скачать меню площадки Чебер"><span aria-hidden="true">⇩</span> Скачать меню</a>
-              <a class="btn btn--primary" href="/files/cheber-program.pdf" download aria-label="Скачать программу площадки Чебер"><span aria-hidden="true">⇩</span> Скачать программу</a>
+              <a class="btn btn--light" href="#booking" aria-label="Запросить меню площадки Чебер">Запросить меню</a>
+              <a class="btn btn--primary" href="#booking" aria-label="Запросить программу площадки Чебер">Запросить программу</a>
             </div>
           </article>
           <article class="venue-card">
@@ -76,19 +77,22 @@
               <div class="venue-card__caption"><h3>ЯРАТОН</h3><p>Загородный формат</p></div>
             </div>
             <div class="venue-card__actions">
-              <a class="btn btn--light" href="/files/yaraton-menu.pdf" download aria-label="Скачать меню площадки Яратон"><span aria-hidden="true">⇩</span> Скачать меню</a>
-              <a class="btn btn--primary" href="/files/yaraton-program.pdf" download aria-label="Скачать программу площадки Яратон"><span aria-hidden="true">⇩</span> Скачать программу</a>
+              <a class="btn btn--light" href="#booking" aria-label="Запросить меню площадки Яратон">Запросить меню</a>
+              <a class="btn btn--primary" href="#booking" aria-label="Запросить программу площадки Яратон">Запросить программу</a>
             </div>
           </article>
         </div>
       </div>
+      <a class="btn venues__callback" href="#booking">Заказать звонок</a>
     </section>
 
-    <section class="section inquiry" aria-labelledby="form-title">
+    <section id="booking" class="section inquiry" aria-labelledby="form-title">
       <div class="container">
         <div class="form-panel">
           <h2 id="form-title">Рассчитаем ваш<br>новогодний корпоратив</h2>
-          <form id="lead-form" novalidate>
+          <form id="lead-form" action="https://formsubmit.co/lenochkash@gmail.com" method="POST" novalidate>
+            <input type="hidden" name="_subject" value="Новая заявка — Новый год в Чебере" />
+            <input type="hidden" name="_template" value="table" />
             <div class="form-grid">
               <label class="field"><span>Имя</span><input id="name" name="name" type="text" autocomplete="name" placeholder="Ваше имя" required /><small class="error" aria-live="polite"></small></label>
               <label class="field"><span>Телефон</span><input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__" required /><small class="error" aria-live="polite"></small></label>
@@ -97,12 +101,11 @@
             </div>
             <button class="submit" type="submit">Получить предложение <span aria-hidden="true">→</span></button>
             <p class="form-note">Менеджер уточнит детали и предложит подходящий вариант</p>
-            <div id="success" class="success" role="status" aria-live="polite" hidden><strong>Спасибо! Мы получили вашу заявку.</strong><br>Менеджер свяжется с вами и поможет подобрать площадку.</div>
           </form>
         </div>
       </div>
     </section>
   </main>
-  <script src="script.js"></script>
+  <script src="script.js?v=20260920-52"></script>
 </body>
 </html>
