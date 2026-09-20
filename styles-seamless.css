@@ -91,7 +91,7 @@ body {
 
   .header .btn {
     padding-inline: 20px;
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 
@@ -132,7 +132,7 @@ body {
     grid-area: 1 / 2;
     min-height: 48px;
     padding: 12px 18px;
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 
@@ -144,7 +144,7 @@ body {
 
   .header .btn {
     padding-inline: 12px;
-    font-size: 11px;
+    font-size: 14px;
   }
 }
 
@@ -265,7 +265,8 @@ main::before {
   border-radius: var(--control-radius);
   background: #00133A;
   color: #fff;
-  font-size: clamp(12px, 2vw, 16px);
+  font-size: clamp(14px, 2vw, 16px);
+  line-height: 1.35;
   font-weight: 800;
   letter-spacing: .04em;
   text-transform: uppercase;
@@ -404,7 +405,8 @@ main::before {
   background: #00133A;
   color: #fff;
   box-shadow: none;
-  font-size: 11px;
+  font-size: 14px;
+  line-height: 1.35;
   font-weight: 800;
   letter-spacing: .06em;
   text-transform: uppercase;
@@ -527,6 +529,11 @@ main::before {
 .inquiry .segment input:checked + span {
   background: #00133A;
   color: #fff;
+}
+
+.inquiry .segment span {
+  font-size: 13px;
+  line-height: 1.25;
 }
 
 .inquiry .field input:focus {
@@ -714,6 +721,13 @@ main::before {
   transform: scaleX(1.183);
   transform-origin: left center;
   letter-spacing: .03em;
+}
+
+@media (max-width: 780px) {
+  .hero h1 {
+    font-size: clamp(32px, 12vw, 82px);
+    line-height: 1.05;
+  }
 }
 
 .hero__copy {
