@@ -158,6 +158,16 @@ main::before {
   color: #a86a10;
 }
 
+.offers .lead .lead__spark {
+  display: inline-block;
+  color: #ffd789;
+  font-family: Georgia, serif;
+  font-size: .7em;
+  line-height: 1;
+  vertical-align: .08em;
+  text-shadow: 0 0 3px #fff3ce, 0 0 8px rgba(234, 180, 92, .85), 0 0 16px rgba(234, 180, 92, .45);
+}
+
 .offers .lead {
   font-weight: 600;
 }
