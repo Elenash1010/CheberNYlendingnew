@@ -85,6 +85,19 @@ main::before {
     radial-gradient(circle at 50% 78%, rgba(224, 166, 73, .08), transparent 32%);
 }
 
+@media (max-width: 780px) {
+  main {
+    background: none;
+    isolation: isolate;
+  }
+
+  /* Keep the illustration proportional, independent of the page height. */
+  main::before {
+    position: fixed;
+    background: #00133A url('assets/BG.png') center top / cover no-repeat;
+  }
+}
+
 .section {
   background: transparent !important;
 }
