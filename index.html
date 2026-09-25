@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260920-64" />
+  <link rel="stylesheet" href="styles.css?v=20260924-75" />
 </head>
 <body>
   <header class="header">
@@ -21,7 +21,7 @@
         <a class="header-vk" href="https://vk.ru/cheber_resort" target="_blank" rel="noopener noreferrer" aria-label="Группа ВКонтакте — открыть в новой вкладке">
           <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true" focusable="false"><path d="M13.162 18.994c-8.2 0-12.877-5.622-13.072-14.976h4.107c.135 6.866 3.163 9.774 5.562 10.374V4.018h3.868V9.94c2.369-.255 4.857-2.953 5.697-5.922h3.868c-.645 3.658-3.343 6.356-5.262 7.466 1.919.899 4.992 3.253 6.161 7.51h-4.257c-.915-2.848-3.193-5.052-6.207-5.352v5.352z" /></svg>
         </a>
-        <a class="btn small" href="#booking">Оставить заявку</a>
+        <a class="btn small" href="tel:+73412664420">Связаться с нами</a>
       </div>
     </div>
   </header>
@@ -48,47 +48,62 @@
         <div class="benefits" role="list">
           <article class="benefit" role="listitem"><div class="benefit__icon" aria-hidden="true"><img src="assets/Icons/Frame%201.svg" alt="" width="84" height="84" /></div><h3>Праздничная атмосфера</h3><p>Создаём настроение до мелочей</p></article>
           <article class="benefit" role="listitem"><div class="benefit__icon" aria-hidden="true"><img src="assets/Icons/Frame%205.svg" alt="" width="84" height="84" /></div><h3>Полный сервис</h3><p>Организация «под ключ»</p></article>
-          <article class="benefit" role="listitem"><div class="benefit__icon" aria-hidden="true"><img src="assets/Icons/Frame%202.svg" alt="" width="84" height="84" /></div><h3>Профессиональная команда</h3><p>Ведущие, артисты, музыканты</p></article>
-          <article class="benefit" role="listitem"><div class="benefit__icon" aria-hidden="true"><img src="assets/Icons/Frame%203.svg" alt="" width="84" height="84" /></div><h3>Индивидуальный формат</h3><p>Под ваши задачи и бюджет</p></article>
-          <article class="benefit" role="listitem"><div class="benefit__icon" aria-hidden="true"><img src="assets/Icons/Frame%204.svg" alt="" width="84" height="84" /></div><h3>Авторское меню</h3><p>Праздничная кухня от шеф-повара</p></article>
+          <article class="benefit" role="listitem"><div class="benefit__icon" aria-hidden="true"><img src="assets/Icons/Frame%202.svg" alt="" width="84" height="84" /></div><h3>Профессиональная команда</h3><p>Ведущие, артисты, <span style="white-space: nowrap">шоу-мены</span></p></article>
+          <article class="benefit" role="listitem"><div class="benefit__icon" aria-hidden="true"><img src="assets/Icons/Frame%203.svg" alt="" width="84" height="84" /></div><h3>Формат на выбор</h3><p>Можно провести праздник только своей компанией или встретить Новый год вместе с другими гостями.</p></article>
+          <article class="benefit" role="listitem"><div class="benefit__icon" aria-hidden="true"><img src="assets/Icons/Frame%204.svg" alt="" width="84" height="84" /></div><h3>Щедрый праздничный стол</h3><p>Любимые блюда, красивые закуски и всё для долгого новогоднего застолья</p></article>
         </div>
       </div>
-      <a class="btn offers__booking" href="#booking">Забронировать прямо сейчас</a>
+      <section class="corporate-pricing container" aria-labelledby="pricing-title">
+        <h3 id="pricing-title">Цена корпоратива</h3>
+        <dl class="corporate-pricing__grid">
+          <div class="corporate-pricing__option corporate-pricing__option--early">
+            <dt>Оплата до 1 ноября</dt>
+            <dd>4 200 <span>₽</span></dd>
+          </div>
+          <div class="corporate-pricing__option">
+            <dt>Оплата после 1 ноября</dt>
+            <dd>4 900 <span>₽</span></dd>
+          </div>
+          <div class="corporate-pricing__option">
+            <dt>Оплата после 1 декабря</dt>
+            <dd>5 600 <span>₽</span></dd>
+          </div>
+        </dl>
+        <img class="corporate-pricing__cheba" src="assets/image%20(19).png" alt="Чеба в новогоднем костюме показывает на цены корпоратива" loading="lazy" />
+        <p class="corporate-pricing__note">Со своей едой нельзя. Алкоголь можно принести с собой — <strong>строго в закрытых бутылках.</strong></p>
+      </section>
+      <a class="btn offers__booking" href="tel:+73412664420">Забронировать прямо сейчас</a>
     </section>
 
     <section class="section venues" aria-labelledby="venues-title">
       <div class="container">
         <header class="section-head section-head--compact">
-          <h2 id="venues-title">Две площадки — для вашей<br class="desktop-only"> незабываемой новогодней ночи</h2>
+          <h2 id="venues-title">Два формата для вашего<br class="desktop-only"> незабываемого новогоднего вечера</h2>
           <p class="lead">Выберите свой Новый год</p>
         </header>
         <div class="venue-grid">
           <article class="venue-card">
             <div class="venue-card__media">
               <img src="assets/cheber-venue.jpg" alt="Праздничная банкетная сервировка площадки Чебер" loading="lazy" />
-              <div class="venue-card__caption"><h3>ЧЕБЕР</h3><p>В черте города</p></div>
-            </div>
-            <div class="venue-card__actions">
-              <a class="btn btn--light" href="assets/Новогоднее_меню_Чебер_редактируемое.pdf" download aria-label="Скачать меню площадки Чебер">Скачать меню</a>
-              <a class="btn btn--primary" href="assets/Prog.pdf" download aria-label="Скачать программу площадки Чебер">Скачать программу</a>
+              <div class="venue-card__caption"><h3>ЧЕБЕР</h3><p>Только для вашей компании</p></div>
             </div>
           </article>
           <article class="venue-card">
             <div class="venue-card__media">
-              <img src="assets/yaraton-venue.jpg" alt="Праздничная банкетная сервировка загородной площадки Яратон" loading="lazy" />
-              <div class="venue-card__caption"><h3>ЯРАТОН</h3><p>Загородный формат</p></div>
-            </div>
-            <div class="venue-card__actions">
-              <a class="btn btn--light" href="#booking" aria-label="Запросить меню площадки Яратон">Запросить меню</a>
-              <a class="btn btn--primary" href="assets/Prog.pdf" download aria-label="Скачать программу площадки Яратон">Скачать программу</a>
+              <img src="assets/yaraton-venue.jpg" alt="Праздничная банкетная сервировка общего новогоднего вечера в Чебере" loading="lazy" />
+              <div class="venue-card__caption"><h3>ЧЕБЕР для всех</h3><p>Присоединитесь к большой компании на общем новогоднем вечере</p></div>
             </div>
           </article>
         </div>
       </div>
-      <a class="btn venues__callback" href="#booking">Заказать звонок</a>
+      <div class="venues__downloads">
+        <a class="btn" href="assets/Новогоднее_меню_Чебер_редактируемое.pdf" download>Скачать меню</a>
+        <a class="btn" href="assets/Prog.pdf" download>Скачать программу</a>
+      </div>
+      <a class="btn venues__callback" href="tel:+73412664420">Уже бронирую</a>
     </section>
 
-    <section id="booking" class="section inquiry" aria-labelledby="form-title">
+    <section id="booking" class="section inquiry" aria-labelledby="form-title" hidden>
       <div class="container">
         <div class="form-panel">
           <h2 id="form-title">Рассчитаем ваш<br>новогодний корпоратив</h2>
@@ -99,7 +114,6 @@
               <label class="field"><span>Имя</span><input id="name" name="name" type="text" autocomplete="name" placeholder="Ваше имя" required /><small class="error" aria-live="polite"></small></label>
               <label class="field"><span>Телефон</span><input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__" required /><small class="error" aria-live="polite"></small></label>
               <label class="field"><span>Количество гостей</span><input id="guests" name="guests" type="number" min="1" max="1000" inputmode="numeric" placeholder="Например, 40" /><small class="error" aria-live="polite"></small></label>
-              <fieldset class="field fieldset"><legend>Площадка</legend><div class="segment" role="radiogroup" aria-label="Выберите площадку"><label><input type="radio" name="venue" value="cheber" checked><span>Чебер</span></label><label><input type="radio" name="venue" value="yaraton"><span>Яратон</span></label><label><input type="radio" name="venue" value="unknown"><span>Пока не знаю</span></label></div></fieldset>
               <label class="field"><span>Желаемая дата/время звонка</span><input id="callback-time" name="callback_time" type="text" placeholder="Например, завтра с 14:00 до 16:00" /><small class="error" aria-live="polite"></small></label>
             </div>
             <button class="submit" type="submit">Получить предложение <span aria-hidden="true">→</span></button>
@@ -111,6 +125,6 @@
       </div>
     </section>
   </main>
-  <script src="script.js?v=20260920-53"></script>
+  <script src="script.js?v=20260924-55"></script>
 </body>
 </html>
