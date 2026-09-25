@@ -8,6 +8,9 @@
   --gold-2: #ffd789;
   --ink: #102A56;
   --max: 1280px;
+  --section-gap: clamp(40px, 5vw, 64px);
+  --action-gap: clamp(24px, 3vw, 32px);
+  --panel-padding: clamp(24px, 4vw, 48px);
 }
 
 * {
@@ -868,7 +871,7 @@ body {
 }
 
 .header .header-actions {
-  gap: 32px;
+  gap: 64px;
 }
 
 .header .phone {
@@ -911,7 +914,7 @@ body {
   }
 
   .header .header-actions {
-    gap: 16px;
+    gap: 32px;
   }
 
   .header .btn {
@@ -1078,8 +1081,8 @@ main::before {
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   column-gap: 24px;
   align-items: center;
-  margin-top: 32px;
-  padding: 32px;
+  margin-top: var(--section-gap);
+  padding: var(--panel-padding) 32px;
   color: #00133A;
   background: linear-gradient(135deg, rgba(0, 19, 58, .72), rgba(0, 19, 58, .54) 55%, rgba(0, 19, 58, .66));
 }
@@ -1198,7 +1201,7 @@ main::before {
   width: fit-content;
   max-width: calc(100% - 28px);
   min-height: 62px;
-  margin: 32px auto 0;
+  margin: var(--action-gap) auto 0;
   padding: 18px 28px;
   border: 1px solid var(--gold);
   border-radius: var(--control-radius);
@@ -1349,7 +1352,7 @@ main::before {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px;
   width: min(800px, calc(100% - 48px));
-  margin: 32px auto 0;
+  margin: var(--action-gap) auto 0;
 }
 
 .venues__downloads .btn,
@@ -1677,6 +1680,78 @@ main::before {
   position: relative;
   z-index: 2;
   top: 24px;
+}
+
+.footer-contacts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 28px clamp(48px, 7vw, 96px);
+  padding: var(--section-gap) 20px;
+  border-top: 1px solid rgba(255, 255, 255, .18);
+  background: #00133A;
+  color: #fff;
+}
+
+.footer-contacts a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  text-decoration: none;
+}
+
+.footer-contacts__phone {
+  font-size: clamp(24px, 3vw, 40px);
+  font-weight: 800;
+  white-space: nowrap;
+  font-variant-numeric: lining-nums;
+}
+
+.footer-contacts__vk {
+  width: 56px;
+}
+
+.footer-contacts a:hover {
+  color: var(--gold);
+}
+
+.footer-contacts a:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 6px;
+  border-radius: 8px;
+}
+
+/* Shared spacing for the content panels and their actions. */
+.offers.section {
+  padding-block: calc(var(--section-gap) / 2);
+}
+
+.venues.section {
+  padding-top: calc(var(--section-gap) / 2);
+  padding-bottom: var(--section-gap);
+}
+
+.inquiry.section {
+  padding-top: 0;
+  padding-bottom: var(--section-gap);
+}
+
+.offers > .container,
+.venues > .container,
+.inquiry .form-panel {
+  padding-block: var(--panel-padding);
+}
+
+.offers .section-head,
+.venues .section-head {
+  margin-bottom: var(--action-gap);
+}
+
+.form-panel h2 {
+  margin-top: 0;
+  margin-bottom: var(--action-gap);
 }
 
 .hero__copy::before {
