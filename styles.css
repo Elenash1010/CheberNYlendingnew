@@ -871,7 +871,7 @@ body {
 }
 
 .header .header-actions {
-  gap: 64px;
+  gap: 112px;
 }
 
 .header .phone {
@@ -914,7 +914,7 @@ body {
   }
 
   .header .header-actions {
-    gap: 32px;
+    gap: 56px;
   }
 
   .header .btn {
@@ -1687,7 +1687,7 @@ main::before {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 28px clamp(48px, 7vw, 96px);
+  gap: 32px clamp(64px, 12vw, 176px);
   padding: var(--section-gap) 20px;
   border-top: 1px solid rgba(255, 255, 255, .18);
   background: #00133A;
