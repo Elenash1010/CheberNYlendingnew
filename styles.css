@@ -2083,7 +2083,13 @@ main > .section > .container {
 }
 
 .venue-format p {
-  font-size: 17px;
+  font-size: clamp(24px, 2.4vw, 32px);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.venue-format__nowrap {
+  white-space: nowrap;
 }
 
 .venue-formats__heading {
