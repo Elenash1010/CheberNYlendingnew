@@ -1921,7 +1921,7 @@ main::before {
 
 @media (max-width: 780px) {
   :root {
-    --text-hero: clamp(32px, 12vw, 82px);
+    --text-hero: clamp(32px, 10vw, 76px);
     --text-phone: 16px;
   }
 }
@@ -2115,4 +2115,75 @@ main > .section > .container {
   font-weight: 800;
   line-height: normal;
   color: #fff;
+}
+
+/* Let narrow layouts shrink to the viewport instead of their text width. */
+.venue-formats > *,
+.venue-formats__options > *,
+.corporate-pricing > *,
+.hero__grid > * {
+  min-width: 0;
+}
+
+@media (max-width: 780px) {
+  .venue-formats {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .venue-formats__options {
+    grid-template-rows: auto auto auto auto;
+  }
+
+  .venue-format__nowrap {
+    white-space: normal;
+  }
+
+  .venue-formats__photo {
+    width: 100%;
+    aspect-ratio: 1.35 / 1;
+  }
+
+  .venue-formats__photo img {
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    object-fit: cover;
+    object-position: center 35%;
+  }
+
+  .hero__visual {
+    transform: none;
+  }
+
+  .hero__visual img {
+    width: 100%;
+    max-width: 620px;
+  }
+}
+
+@media (max-width: 520px) {
+  :root {
+    --panel-padding: 16px;
+    --card-padding: 16px;
+  }
+
+  .offers > .corporate-pricing {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .corporate-pricing h3,
+  .corporate-pricing__grid {
+    grid-column: 1;
+  }
+
+  .offers .corporate-pricing__cheba {
+    grid-column: 1;
+    grid-row: auto;
+    max-width: 240px;
+    margin-top: var(--card-gap);
+  }
+
+  .venue-format p {
+    font-size: clamp(20px, 5.5vw, 24px);
+  }
 }
