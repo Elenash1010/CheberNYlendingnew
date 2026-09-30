@@ -87,6 +87,19 @@ header {
   letter-spacing: .05em;
 }
 
+.header-phones,
+.footer-contacts__phones {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px var(--contact-gap, 24px);
+}
+
+.footer-contacts__phones {
+  display: contents;
+}
+
 .phone {
   white-space: nowrap;
   color: #fff;
@@ -952,7 +965,8 @@ body {
 }
 
 .header .header-actions {
-  gap: 112px;
+  --contact-gap: clamp(16px, 4vw, 56px);
+  gap: var(--contact-gap);
 }
 
 .header .phone {
@@ -995,7 +1009,7 @@ body {
   }
 
   .header .header-actions {
-    gap: 56px;
+    gap: var(--contact-gap);
   }
 
   .header .btn {
@@ -1012,8 +1026,9 @@ body {
   .header .header-inner {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
-    grid-template-rows: 48px 44px;
-    height: 112px;
+    grid-template-rows: 48px auto;
+    height: auto;
+    min-height: 112px;
     padding-block: 8px;
     gap: 4px 12px;
   }
@@ -1026,14 +1041,16 @@ body {
     grid-area: 1 / 1;
   }
 
-  .header .phone {
-    grid-area: 2 / 2;
-    justify-self: end;
+  .header .header-phones {
+    grid-area: 2 / 1 / 3 / -1;
+    justify-self: stretch;
+    justify-content: center;
+    gap: 6px 16px;
   }
 
   .header .header-vk {
-    grid-area: 2 / 1;
-    justify-self: start;
+    grid-area: 1 / 2;
+    justify-self: end;
   }
 
   .header .btn {
@@ -1768,7 +1785,7 @@ main::before {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 32px clamp(64px, 12vw, 176px);
+  gap: 24px clamp(16px, 4vw, 56px);
   padding: var(--section-gap) 20px;
   border-top: 1px solid rgba(255, 255, 255, .18);
   background: #00133A;
