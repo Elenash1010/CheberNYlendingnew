@@ -135,19 +135,15 @@ header {
 }
 
 .hero {
-  background-image: url('assets/bg-screen-1.jpg');
 }
 
 .offers {
-  background-image: url('assets/bg-screen-2.jpg');
 }
 
 .venues {
-  background-image: url('assets/bg-screen-3.jpg');
 }
 
 .inquiry {
-  background-image: url('assets/bg-screen-4.jpg');
 }
 
 .section::after {
@@ -1062,7 +1058,7 @@ body {
 
 main {
   position: relative;
-  background: url('assets/BG.png') center top / 100% 100% no-repeat;
+  background: url('assets/web/background.jpg') center top / 100% 100% no-repeat;
 }
 
 main::before {
@@ -1083,7 +1079,7 @@ main::before {
 
   main::before {
     position: fixed;
-    background: #00133A url('assets/BG.png') center top / cover no-repeat;
+    background: #00133A url('assets/web/background.jpg') center top / cover no-repeat;
   }
 
 }
@@ -2100,6 +2096,10 @@ main > .section > .container {
 .venue-formats__options .venues__downloads {
   width: 100%;
   margin: 0;
+}
+
+.venues__downloads .btn:only-child {
+  grid-column: 1 / -1;
 }
 
 .venue-formats__options .venues__downloads .btn {
