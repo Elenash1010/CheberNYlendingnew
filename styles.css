@@ -274,12 +274,6 @@ header {
   color: var(--ink);
   text-align: center;
   backdrop-filter: blur(12px);
-  transition: transform .2s ease,box-shadow .2s ease;
-}
-
-.benefit:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 24px 56px rgba(0,24,72,.3);
 }
 
 .benefit__icon {
@@ -961,7 +955,7 @@ body {
 }
 
 .header .header-inner {
-  height: 108px;
+  height: 80px;
 }
 
 .header .header-actions {
@@ -971,6 +965,18 @@ body {
 
 .header .phone {
   font-weight: 600;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+.header-address {
+  max-width: 380px;
+  margin: 0;
+  font-style: normal;
+  font-size: var(--text-phone);
+  font-variant-numeric: lining-nums tabular-nums;
+  line-height: 1.4;
+  letter-spacing: normal;
+  text-wrap: balance;
 }
 
 .header-vk {
@@ -1028,7 +1034,7 @@ body {
     grid-template-columns: minmax(0, 1fr) auto;
     grid-template-rows: 48px auto;
     height: auto;
-    min-height: 112px;
+    min-height: 96px;
     padding-block: 8px;
     gap: 4px 12px;
   }
@@ -1042,10 +1048,16 @@ body {
   }
 
   .header .header-phones {
-    grid-area: 2 / 1 / 3 / -1;
+    grid-area: 3 / 1 / 4 / -1;
     justify-self: stretch;
     justify-content: center;
     gap: 6px 16px;
+  }
+
+  .header-address {
+    grid-area: 2 / 1 / 3 / -1;
+    max-width: none;
+    text-align: center;
   }
 
   .header .header-vk {
@@ -1105,6 +1117,7 @@ main::before {
   background: transparent !important;
 }
 
+.hall-intro__panel,
 .offers > .container,
 .venues > .container {
   padding: 62px 32px 54px;
@@ -1168,10 +1181,6 @@ main::before {
   box-shadow: inset 0 0 0 1px rgba(170, 218, 250, .25), 0 5px 18px rgba(33, 89, 148, .1);
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
-}
-
-.offers .benefit:hover {
-  box-shadow: inset 0 0 0 1px rgba(170, 218, 250, .4), 0 10px 24px rgba(33, 89, 148, .2);
 }
 
 .offers > .corporate-pricing {
@@ -1804,7 +1813,17 @@ main::before {
   font-size: clamp(24px, 3vw, 40px);
   font-weight: 800;
   white-space: nowrap;
-  font-variant-numeric: lining-nums;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+.footer-contacts__address {
+  flex-basis: 100%;
+  margin: 0;
+  font-style: normal;
+  font-size: clamp(16px, 1.6vw, 20px);
+  line-height: 1.5;
+  text-align: center;
+  text-wrap: balance;
 }
 
 .footer-contacts__vk {
@@ -2082,6 +2101,59 @@ main > .section > .container {
 }
 
 /* Price and venue cards share the same dimensions and inner spacing. */
+.hall-intro__panel {
+  padding: var(--panel-padding);
+  color: #fff;
+  background: linear-gradient(135deg, rgba(0, 19, 58, .72), rgba(0, 19, 58, .54) 55%, rgba(0, 19, 58, .66));
+}
+
+.hall-intro__photos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--card-gap);
+}
+
+.hall-intro__photos img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, .66);
+  border-radius: 20px;
+}
+
+.hall-intro__copy {
+  margin-top: var(--action-gap);
+  text-align: center;
+}
+
+.hall-intro__copy h1 {
+  margin: 0;
+  font-size: clamp(28px, 3.5vw, 52px);
+  font-weight: 800;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.hall-intro__included {
+  margin: 16px 0 12px;
+  color: var(--gold-2);
+  font-size: clamp(22px, 2.5vw, 34px);
+}
+
+.hall-intro__details {
+  margin: 0;
+  font-size: var(--text-lead);
+  line-height: 1.6;
+  text-wrap: balance;
+}
+
+.hall-intro__details span {
+  margin-inline: .25em;
+  color: var(--gold);
+}
+
 .corporate-pricing__option,
 .venue-format {
   min-height: calc(var(--card-padding) * 2 + 100px);
