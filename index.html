@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261030-9" />
+  <link rel="stylesheet" href="styles.css?v=20261030-18" />
 </head>
 <body>
   <header class="header">
@@ -25,6 +25,7 @@
         <a class="header-vk" href="https://vk.ru/cheber_resort" target="_blank" rel="noopener noreferrer" aria-label="Группа ВКонтакте — открыть в новой вкладке">
           <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true" focusable="false"><path d="M13.162 18.994c-8.2 0-12.877-5.622-13.072-14.976h4.107c.135 6.866 3.163 9.774 5.562 10.374V4.018h3.868V9.94c2.369-.255 4.857-2.953 5.697-5.922h3.868c-.645 3.658-3.343 6.356-5.262 7.466 1.919.899 4.992 3.253 6.161 7.51h-4.257c-.915-2.848-3.193-5.052-6.207-5.352v5.352z" /></svg>
         </a>
+        <button class="btn header-request" type="button" data-open-booking>Оставить заявку</button>
       </div>
     </div>
   </header>
@@ -42,6 +43,7 @@
           <p class="hall-intro__details">Банкет <span>•</span> программа <span>•</span> ведущий <span>•</span> праздничное меню</p>
         </div>
       </div>
+      <button class="btn offers__booking" type="button" data-open-booking>Получить предложение</button>
     </section>
 
     <section class="section offers" aria-labelledby="offers-title">
@@ -58,26 +60,7 @@
           <article class="benefit" role="listitem"><div class="benefit__icon" aria-hidden="true"><img src="assets/web/benefit-4.svg" alt="" width="84" height="84" /></div><h3>Щедрый праздничный стол</h3><p>Любимые блюда, красивые закуски и всё для долгого новогоднего застолья</p></article>
         </div>
       </div>
-      <section class="corporate-pricing container" aria-labelledby="pricing-title">
-        <h3 id="pricing-title">Цена корпоратива</h3>
-        <dl class="corporate-pricing__grid">
-          <div class="corporate-pricing__option corporate-pricing__option--early">
-            <dt>Оплата до 1 ноября</dt>
-            <dd>4 200 <span>₽</span></dd>
-          </div>
-          <div class="corporate-pricing__option">
-            <dt>Оплата после 1 ноября</dt>
-            <dd>4 900 <span>₽</span></dd>
-          </div>
-          <div class="corporate-pricing__option">
-            <dt>Оплата после 1 декабря</dt>
-            <dd>5 600 <span>₽</span></dd>
-          </div>
-        </dl>
-        <img class="corporate-pricing__cheba" src="assets/web/cheba-pricing.png" width="900" height="1017" alt="Чеба в новогоднем костюме показывает на цены корпоратива" loading="lazy" decoding="async" />
-        <p class="corporate-pricing__note">Со своей едой нельзя. Алкоголь можно принести с собой — <strong>строго в закрытых бутылках.</strong></p>
-      </section>
-      <a class="btn offers__booking" href="#contacts">Забронировать прямо сейчас</a>
+      <button class="btn offers__booking" type="button" data-open-booking>Подобрать удобные даты</button>
     </section>
 
     <section class="section venues" aria-labelledby="venues-title">
@@ -93,9 +76,11 @@
             <p class="lead venue-formats__heading">Выбери свой Новый год</p>
             <article class="venue-format">
               <p>Забронируй весь зал только <span class="venue-format__nowrap">для своей компании</span></p>
+              <button class="venue-format__request" type="button" data-open-booking>Оставить заявку</button>
             </article>
             <article class="venue-format">
               <p>Присоединитесь к большой компании <span class="venue-format__nowrap">на общем новогоднем вечере</span></p>
+              <button class="venue-format__request" type="button" data-open-booking>Оставить заявку</button>
             </article>
             <div class="venues__downloads">
               <a class="btn" href="assets/Menu/Menu_new2027.pdf" download>Скачать меню</a>
@@ -106,11 +91,26 @@
       </div>
     </section>
 
-    <section id="booking" class="section inquiry" aria-labelledby="form-title" hidden>
+    <section class="section offers" aria-labelledby="pricing-title">
+      <section class="corporate-pricing container" aria-labelledby="pricing-title">
+        <h3 id="pricing-title">Цена корпоратива</h3>
+        <div class="corporate-pricing__grid">
+          <button class="corporate-pricing__option corporate-pricing__option--early" type="button" data-open-booking><span class="corporate-pricing__label">Оплата до 1 ноября</span><span class="corporate-pricing__price">4 200 <span>₽</span></span><span class="corporate-pricing__cta">Оставить заявку</span></button>
+          <button class="corporate-pricing__option" type="button" data-open-booking><span class="corporate-pricing__label">Оплата после 1 ноября</span><span class="corporate-pricing__price">4 900 <span>₽</span></span><span class="corporate-pricing__cta">Оставить заявку</span></button>
+          <button class="corporate-pricing__option" type="button" data-open-booking><span class="corporate-pricing__label">Оплата после 1 декабря</span><span class="corporate-pricing__price">5 600 <span>₽</span></span><span class="corporate-pricing__cta">Оставить заявку</span></button>
+        </div>
+        <img class="corporate-pricing__cheba" src="assets/web/cheba-pricing.png" width="900" height="1017" alt="Чеба в новогоднем костюме показывает на цены корпоратива" loading="lazy" decoding="async" />
+        <p class="corporate-pricing__note">Со своей едой нельзя. Алкоголь можно принести с собой — <strong>строго в закрытых бутылках.</strong></p>
+      </section>
+      <button class="btn offers__booking" type="button" data-open-booking>Забронировать прямо сейчас</button>
+    </section>
+
+    <dialog id="booking" class="inquiry booking-modal" aria-labelledby="form-title">
       <div class="container">
         <div class="form-panel">
+          <button class="booking-modal__close" type="button" aria-label="Закрыть форму">×</button>
           <h2 id="form-title">Рассчитаем ваш<br>новогодний корпоратив</h2>
-          <form id="lead-form" action="https://formsubmit.co/lenochkash@gmail.com" method="POST" novalidate>
+          <form id="lead-form" method="POST" novalidate>
             <input type="hidden" name="_subject" value="🎄 Новая заявка — Новогодний корпоратив" />
             <input type="hidden" name="_template" value="table" />
             <div class="form-grid">
@@ -126,7 +126,7 @@
           </form>
         </div>
       </div>
-    </section>
+    </dialog>
   </main>
   <footer id="contacts" class="footer-contacts" aria-label="Контакты">
     <div class="footer-contacts__phones">
@@ -138,6 +138,6 @@
     </a>
     <address class="footer-contacts__address"><strong>Адрес:</strong> г. Ижевск, ул. Ленина, 132, курорт «ЧЕБЕР»</address>
   </footer>
-  <script src="script.js?v=20260929-1"></script>
+  <script src="script.js?v=20261030-2"></script>
 </body>
 </html>

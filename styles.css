@@ -1238,13 +1238,13 @@ main::before {
   background: var(--gold);
 }
 
-.corporate-pricing dt {
+.corporate-pricing__label {
   font-size: 17px;
   line-height: 1.5;
   font-weight: 600;
 }
 
-.corporate-pricing dd {
+.corporate-pricing__price {
   margin: 12px 0 0;
   font-size: clamp(32px, 3vw, 46px);
   line-height: 1.2;
@@ -1253,7 +1253,7 @@ main::before {
   white-space: nowrap;
 }
 
-.corporate-pricing dd span {
+.corporate-pricing__price span {
   font-size: .7em;
   font-weight: 600;
 }
@@ -2283,5 +2283,169 @@ main > .section > .container {
 
   .venue-format p {
     font-size: clamp(20px, 5.5vw, 24px);
+  }
+}
+
+/* Shared request actions. */
+[hidden] { display: none !important; }
+button[data-open-booking] { cursor: pointer; }
+button.offers__booking { display: flex; align-items: center; justify-content: center; text-align: center; background: var(--gold); color: #00133A; }
+.corporate-pricing__option { width: 100%; color: #00133A; font-family: inherit; align-items: center; }
+.corporate-pricing__cta { margin-top: 14px; font-size: 16px; font-weight: 800; text-decoration: underline; text-underline-offset: 4px; }
+[data-open-booking]:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
+.header .header-inner { height: auto; min-height: 80px; padding-block: 8px; }
+.header .header-actions { gap: clamp(12px, 2vw, 28px); }
+.header .header-phones { flex-shrink: 0; }
+.header .header-request { min-height: 44px; padding: 12px 18px; white-space: nowrap; background: var(--gold); color: #00133A; }
+.header .logo { flex-shrink: 0; }
+@media (min-width: 781px) and (max-width: 1200px) {
+  .header .header-actions { flex-wrap: wrap; justify-content: flex-end; gap: 8px 18px; }
+}
+@media (max-width: 780px) {
+  .header .header-request { grid-area: 4 / 1 / 5 / -1; justify-self: center; }
+}
+body.booking-open { overflow: hidden; }
+dialog.booking-modal {
+  position: fixed;
+  inset: 0;
+  width: min(900px, calc(100% - 24px));
+  max-width: none;
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, .7);
+  border-radius: 28px;
+  background: #102a56;
+  color: #fff;
+  overflow-y: auto;
+}
+dialog.booking-modal::backdrop { background: rgba(0, 9, 30, .8); backdrop-filter: blur(6px); }
+dialog.booking-modal > .container { width: 100%; margin: 0; }
+dialog.booking-modal .form-panel { position: relative; margin: 0; padding: 56px 32px 32px; border: 0; border-radius: 0; }
+dialog.booking-modal .form-panel h2 { font-size: clamp(26px, 4vw, 40px); }
+.booking-modal__close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #00133a;
+  color: #fff;
+  font-size: 32px;
+  line-height: 1;
+  cursor: pointer;
+}
+.booking-modal__close:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+@media (max-width: 520px) {
+  dialog.booking-modal .form-panel { padding: 60px 16px 24px; }
+}
+/* One format for all request buttons; price cards keep their card layout. */
+body .btn[data-open-booking] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60px;
+  padding: 16px 28px;
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  background: var(--gold);
+  color: #00133A;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.35;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  text-align: center;
+}
+@media (max-width: 520px) {
+  body .btn[data-open-booking] {
+    padding-inline: 20px;
+    font-size: 14px;
+  }
+}
+.venue-format__request {
+  align-self: flex-start;
+  margin-top: 16px;
+  padding: 8px 0;
+  border: 0;
+  background: transparent;
+  color: var(--gold-2);
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.4;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+/* Larger request labels across the header and cards. */
+body .header .header-request,
+.corporate-pricing__cta,
+.venue-format__request {
+  font-size: 20px;
+  font-weight: 800;
+}
+@media (max-width: 520px) {
+  body .header .header-request,
+  .corporate-pricing__cta,
+  .venue-format__request {
+    font-size: 18px;
+  }
+}
+@media (min-width: 781px) {
+  .header .header-address {
+    text-align: right;
+    margin-left: auto;
+  }
+}
+/* Align the header with the content panels and group contacts on the right. */
+.header .container {
+  width: min(1600px, calc(100% - var(--page-gutter) * 2));
+}
+.header .header-inner {
+  justify-content: space-between;
+}
+@media (min-width: 781px) {
+  .header .header-actions {
+    margin-left: auto;
+    justify-content: flex-end;
+    gap: 16px;
+    flex-wrap: nowrap;
+    min-width: 0;
+  }
+  .header .header-address {
+    margin: 0;
+    max-width: 320px;
+    text-align: right;
+  }
+  .header .header-phones {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+  }
+  .header .header-request {
+    flex-shrink: 0;
+  }
+}
+@media (min-width: 781px) and (max-width: 1080px) {
+  .header .logo { width: 130px; }
+  .header .header-inner { gap: 16px; }
+  .header .header-actions { gap: 12px; }
+  .header .header-address { max-width: 230px; }
+  .header .phone { min-height: auto; }
+  body .header .header-request { padding-inline: 18px; font-size: 18px; }
+}
+@media (min-width: 781px) {
+  .header .header-actions { gap: clamp(24px, 2.5vw, 40px); }
+  .header .header-address { text-align: left; }
+  .header .header-phones { gap: 10px; }
+}
+@media (max-width: 780px) {
+  .venue-format__request {
+    align-self: center;
+    text-align: center;
   }
 }

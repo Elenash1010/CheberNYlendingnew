@@ -36,46 +36,25 @@ form.addEventListener('submit', async (event) => {
     form.querySelector('[aria-invalid="true"]').focus();
     return;
   }
-  name.value = name.value.trim();
-  const payload = {
-    'Имя': name.value,
-    'Телефон': phone.value,
-    'Количество гостей': guests.value || 'Не указано',
-    'Желаемая дата/время звонка': form.elements.namedItem('callback_time').value.trim() || 'Не указано',
-    _subject: form.elements.namedItem('_subject').value,
-    _template: form.elements.namedItem('_template').value
-  };
-  sending = true;
-  submitButton.disabled = true;
-  form.setAttribute('aria-busy', 'true');
-  const buttonContent = submitButton.innerHTML;
-  submitButton.textContent = 'Отправляем…';
-  let timeout;
-  try {
-    const controller = new AbortController();
-    timeout = setTimeout(() => controller.abort(), 20000);
-    const response = await fetch('https://formsubmit.co/ajax/lenochkash@gmail.com', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-      body: JSON.stringify(payload),
-      signal: controller.signal
-    });
-    const result = await response.json();
-    if (!response.ok || !(result.success === true || result.success === 'true')) {
-      throw new Error('Submission failed');
-    }
-    success.hidden = false;
-    // Keep the entered values available after submission.
-    success.scrollIntoView({ behavior: 'auto', block: 'nearest' });
-  } catch (error) {
-    sendError.textContent = 'Не удалось подтвердить отправку. Проверьте соединение и попробуйте ещё раз. Введённые данные сохранены.';
-    sendError.hidden = false;
-    sendError.scrollIntoView({ behavior: 'auto', block: 'nearest' });
-  } finally {
-    clearTimeout(timeout);
-    sending = false;
-    submitButton.disabled = false;
-    submitButton.innerHTML = buttonContent;
-    form.removeAttribute('aria-busy');
-  }
+  sendError.textContent = 'Отправка заявок пока не подключена. Пожалуйста, свяжитесь с нами по телефону в шапке сайта.';
+  sendError.hidden = false;
 });
+
+const booking = document.querySelector('#booking');
+document.querySelectorAll('[data-open-booking]').forEach(button => {
+  button.setAttribute('aria-controls', 'booking');
+  button.addEventListener('click', () => {
+    booking.showModal();
+    document.body.classList.add('booking-open');
+    document.querySelector('#name').focus({ preventScroll: true });
+  });
+});
+
+booking.querySelector('.booking-modal__close').addEventListener('click', () => booking.close());
+booking.addEventListener('click', event => {
+  if (event.target !== booking) return;
+  const bounds = booking.getBoundingClientRect();
+  if (event.clientX < bounds.left || event.clientX > bounds.right ||
+      event.clientY < bounds.top || event.clientY > bounds.bottom) booking.close();
+});
+booking.addEventListener('close', () => document.body.classList.remove('booking-open'));
