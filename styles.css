@@ -519,6 +519,10 @@ header {
   gap: 23px 24px;
 }
 
+#lead-form .form-grid > .field:last-child {
+  grid-column: 1 / -1;
+}
+
 .field {
   display: block;
 }
@@ -2448,4 +2452,24 @@ body .header .header-request,
     align-self: center;
     text-align: center;
   }
+}
+/* Compact single-column callback form. */
+dialog.booking-modal {
+  width: min(520px, calc(100% - 24px));
+}
+dialog.booking-modal .form-panel {
+  padding: 52px 24px 24px;
+}
+dialog.booking-modal .form-panel h2 {
+  font-size: clamp(24px, 5vw, 30px);
+  margin-bottom: 20px;
+}
+#lead-form .form-grid {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+}
+dialog.booking-modal .field > span { font-size: 16px; }
+dialog.booking-modal .field input { min-height: 48px; padding: 12px 18px; font-size: 16px; }
+@media (max-width: 520px) {
+  dialog.booking-modal .form-panel { padding: 52px 16px 20px; }
 }
