@@ -1982,7 +1982,16 @@ main::before {
 .offers .lead { font-size: var(--text-offers-lead); }
 .venues .section-head .lead { font-size: var(--text-venues-lead); }
 .offers .lead .lead__spark { font-size: .7em; }
-.benefit h3 { font-size: var(--text-benefit-title); }
+.benefit h3 {
+  font-size: var(--text-benefit-title);
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+
+.offers .benefits .benefit {
+  padding-inline: 12px;
+}
 .benefit p { font-size: var(--text-benefit-body); }
 .benefit__icon { font-size: var(--text-benefit-icon); }
 .venue-card__caption h3 { font-size: var(--text-venue-title); }
