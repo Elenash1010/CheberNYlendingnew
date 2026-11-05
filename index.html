@@ -25,7 +25,7 @@
         <a class="header-vk" href="https://vk.ru/cheber_resort" target="_blank" rel="noopener noreferrer" aria-label="Группа ВКонтакте — открыть в новой вкладке">
           <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true" focusable="false"><path d="M13.162 18.994c-8.2 0-12.877-5.622-13.072-14.976h4.107c.135 6.866 3.163 9.774 5.562 10.374V4.018h3.868V9.94c2.369-.255 4.857-2.953 5.697-5.922h3.868c-.645 3.658-3.343 6.356-5.262 7.466 1.919.899 4.992 3.253 6.161 7.51h-4.257c-.915-2.848-3.193-5.052-6.207-5.352v5.352z" /></svg>
         </a>
-        <button class="btn header-request" type="button" data-open-booking>Оставить заявку</button>
+        <button class="btn header-request" type="button" data-open-booking hidden>Оставить заявку</button>
       </div>
     </div>
   </header>
@@ -43,7 +43,7 @@
           <p class="hall-intro__details">Банкет <span>•</span> программа <span>•</span> ведущий <span>•</span> праздничное меню</p>
         </div>
       </div>
-      <button class="btn offers__booking" type="button" data-open-booking>Получить предложение</button>
+      <button class="btn offers__booking" type="button" data-open-booking hidden>Получить предложение</button>
     </section>
 
     <section class="section offers" aria-labelledby="offers-title">
@@ -60,7 +60,7 @@
           <article class="benefit" role="listitem"><div class="benefit__icon" aria-hidden="true"><img src="assets/web/benefit-4.svg" alt="" width="84" height="84" /></div><h3>Щедрый праздничный стол</h3><p>Любимые блюда, красивые закуски и всё для долгого новогоднего застолья</p></article>
         </div>
       </div>
-      <button class="btn offers__booking" type="button" data-open-booking>Подобрать удобные даты</button>
+      <button class="btn offers__booking" type="button" data-open-booking hidden>Подобрать удобные даты</button>
     </section>
 
     <section class="section venues" aria-labelledby="venues-title">
@@ -76,11 +76,11 @@
             <p class="lead venue-formats__heading">Выбери свой Новый год</p>
             <article class="venue-format">
               <p>Забронируй весь зал только <span class="venue-format__nowrap">для своей компании</span></p>
-              <button class="venue-format__request" type="button" data-open-booking>Оставить заявку</button>
+              <button class="venue-format__request" type="button" data-open-booking hidden>Оставить заявку</button>
             </article>
             <article class="venue-format">
               <p>Присоединитесь к большой компании <span class="venue-format__nowrap">на общем новогоднем вечере</span></p>
-              <button class="venue-format__request" type="button" data-open-booking>Оставить заявку</button>
+              <button class="venue-format__request" type="button" data-open-booking hidden>Оставить заявку</button>
             </article>
             <div class="venues__downloads">
               <a class="btn" href="assets/Menu/Menu_new2027.pdf" download>Скачать меню</a>
@@ -95,14 +95,37 @@
       <section class="corporate-pricing container" aria-labelledby="pricing-title">
         <h3 id="pricing-title">Цена корпоратива</h3>
         <div class="corporate-pricing__grid">
-          <button class="corporate-pricing__option corporate-pricing__option--early" type="button" data-open-booking><span class="corporate-pricing__label">Оплата до 1 ноября</span><span class="corporate-pricing__price">4 200 <span>₽</span></span><span class="corporate-pricing__cta">Оставить заявку</span></button>
-          <button class="corporate-pricing__option" type="button" data-open-booking><span class="corporate-pricing__label">Оплата после 1 ноября</span><span class="corporate-pricing__price">4 900 <span>₽</span></span><span class="corporate-pricing__cta">Оставить заявку</span></button>
-          <button class="corporate-pricing__option" type="button" data-open-booking><span class="corporate-pricing__label">Оплата после 1 декабря</span><span class="corporate-pricing__price">5 600 <span>₽</span></span><span class="corporate-pricing__cta">Оставить заявку</span></button>
+          <div class="corporate-pricing__option corporate-pricing__option--early"><span class="corporate-pricing__label">Оплата до 1 ноября</span><span class="corporate-pricing__price">4 200 <span>₽</span></span></div>
+          <div class="corporate-pricing__option"><span class="corporate-pricing__label">Оплата после 1 ноября</span><span class="corporate-pricing__price">4 900 <span>₽</span></span></div>
+          <div class="corporate-pricing__option"><span class="corporate-pricing__label">Оплата после 1 декабря</span><span class="corporate-pricing__price">5 600 <span>₽</span></span></div>
         </div>
-        <img class="corporate-pricing__cheba" src="assets/web/cheba-pricing.png" width="900" height="1017" alt="Чеба в новогоднем костюме показывает на цены корпоратива" loading="lazy" decoding="async" />
+        <img class="corporate-pricing__cheba" src="assets/web/boyCheba.png" width="1024" height="1536" alt="Мальчик в костюме Чебы" loading="lazy" decoding="async" />
         <p class="corporate-pricing__note">Со своей едой нельзя. Алкоголь можно принести с собой — <strong>строго в закрытых бутылках.</strong></p>
       </section>
-      <button class="btn offers__booking" type="button" data-open-booking>Забронировать прямо сейчас</button>
+      <a class="btn offers__booking offers__contact" href="#contacts">Связаться с нами</a>
+    </section>
+
+    <section id="program" class="section corporate-program" aria-labelledby="program-title">
+      <div class="container corporate-program__panel">
+        <div class="section-head">
+          <h2 id="program-title">Программа корпоратива</h2>
+        </div>
+        <div class="corporate-program__pages">
+          <a href="assets/web/program/page-01.png" target="_blank" rel="noopener" aria-label="Открыть страницу 1 программы в полном размере"><img src="assets/web/program/page-01.png" width="2000" height="1414" alt="Программа корпоратива — страница 1 из 12" loading="lazy" decoding="async" /></a>
+          <a href="assets/web/program/page-02.png" target="_blank" rel="noopener" aria-label="Открыть страницу 2 программы в полном размере"><img src="assets/web/program/page-02.png" width="2000" height="1414" alt="Программа корпоратива — страница 2 из 12" loading="lazy" decoding="async" /></a>
+          <a href="assets/web/program/page-03.png" target="_blank" rel="noopener" aria-label="Открыть страницу 3 программы в полном размере"><img src="assets/web/program/page-03.png" width="2000" height="1414" alt="Программа корпоратива — страница 3 из 12" loading="lazy" decoding="async" /></a>
+          <a href="assets/web/program/page-04.png" target="_blank" rel="noopener" aria-label="Открыть страницу 4 программы в полном размере"><img src="assets/web/program/page-04.png" width="2000" height="1414" alt="Программа корпоратива — страница 4 из 12" loading="lazy" decoding="async" /></a>
+          <a href="assets/web/program/page-05.png" target="_blank" rel="noopener" aria-label="Открыть страницу 5 программы в полном размере"><img src="assets/web/program/page-05.png" width="2000" height="1414" alt="Программа корпоратива — страница 5 из 12" loading="lazy" decoding="async" /></a>
+          <a href="assets/web/program/page-06.png" target="_blank" rel="noopener" aria-label="Открыть страницу 6 программы в полном размере"><img src="assets/web/program/page-06.png" width="2000" height="1414" alt="Программа корпоратива — страница 6 из 12" loading="lazy" decoding="async" /></a>
+          <a href="assets/web/program/page-07.png" target="_blank" rel="noopener" aria-label="Открыть страницу 7 программы в полном размере"><img src="assets/web/program/page-07.png" width="2000" height="1414" alt="Программа корпоратива — страница 7 из 12" loading="lazy" decoding="async" /></a>
+          <a href="assets/web/program/page-08.png" target="_blank" rel="noopener" aria-label="Открыть страницу 8 программы в полном размере"><img src="assets/web/program/page-08.png" width="2000" height="1414" alt="Программа корпоратива — страница 8 из 12" loading="lazy" decoding="async" /></a>
+          <a href="assets/web/program/page-09.png" target="_blank" rel="noopener" aria-label="Открыть страницу 9 программы в полном размере"><img src="assets/web/program/page-09.png" width="2000" height="1414" alt="Программа корпоратива — страница 9 из 12" loading="lazy" decoding="async" /></a>
+          <a href="assets/web/program/page-10.png" target="_blank" rel="noopener" aria-label="Открыть страницу 10 программы в полном размере"><img src="assets/web/program/page-10.png" width="2000" height="1414" alt="Программа корпоратива — страница 10 из 12" loading="lazy" decoding="async" /></a>
+          <a href="assets/web/program/page-11.png" target="_blank" rel="noopener" aria-label="Открыть страницу 11 программы в полном размере"><img src="assets/web/program/page-11.png" width="2000" height="1414" alt="Программа корпоратива — страница 11 из 12" loading="lazy" decoding="async" /></a>
+          <a href="assets/web/program/page-12.png" target="_blank" rel="noopener" aria-label="Открыть страницу 12 программы в полном размере"><img src="assets/web/program/page-12.png" width="2000" height="1414" alt="Программа корпоратива — страница 12 из 12" loading="lazy" decoding="async" /></a>
+        </div>
+        <a class="btn corporate-program__download" href="assets/web/program.pdf" download>Скачать программу PDF</a>
+      </div>
     </section>
 
     <dialog id="booking" class="inquiry booking-modal" aria-labelledby="form-title">

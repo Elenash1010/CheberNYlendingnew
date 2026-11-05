@@ -1091,7 +1091,7 @@ body {
 
 main {
   position: relative;
-  background: url('assets/web/background.jpg') center top / 100% 100% no-repeat;
+  background: #00133A url('assets/web/background-seamless.svg') center top / 100% auto repeat-y;
 }
 
 main::before {
@@ -1106,13 +1106,12 @@ main::before {
 
 @media (max-width: 780px) {
   main {
-    background: none;
+    background: #00133A url('assets/web/background-seamless.svg') center top / 100% auto repeat-y;
     isolation: isolate;
   }
 
   main::before {
-    position: fixed;
-    background: #00133A url('assets/web/background.jpg') center top / cover no-repeat;
+    position: absolute;
   }
 
 }
@@ -1225,7 +1224,6 @@ main::before {
   height: auto;
   max-width: 460px;
   justify-self: center;
-  transform: scaleX(-1);
   filter: drop-shadow(0 12px 16px rgba(0, 19, 58, .16));
 }
 
@@ -2443,9 +2441,51 @@ body .header .header-request,
   body .header .header-request { padding-inline: 18px; font-size: 18px; }
 }
 @media (min-width: 781px) {
-  .header .header-actions { gap: clamp(24px, 2.5vw, 40px); }
-  .header .header-address { text-align: left; }
+  .header .header-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 2fr);
+    gap: 24px;
+  }
+  .header .logo { grid-column: 1; grid-row: 1; }
+  .header .header-actions { display: contents; }
+  .header .header-address {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+    text-align: left;
+  }
+  .header .header-phones {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: start;
+    margin-left: 16px;
+  }
+  .header .header-vk {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: start;
+    margin-left: calc(clamp(180px, 17vw, 250px) + 40px);
+  }
   .header .header-phones { gap: 10px; }
+}
+.header .header-vk {
+  flex: 0 0 64px;
+  width: 64px;
+  height: 64px;
+}
+.header .header-vk svg {
+  width: 48px;
+  height: 48px;
+}
+@media (max-width: 780px) {
+  .header .header-vk {
+    width: 48px;
+    height: 48px;
+  }
+  .header .header-vk svg {
+    width: 40px;
+    height: 40px;
+  }
 }
 @media (max-width: 780px) {
   .venue-format__request {
@@ -2453,6 +2493,73 @@ body .header .header-request,
     text-align: center;
   }
 }
+.offers .offers__contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 88px;
+  padding: 24px 48px;
+  border-radius: 999px;
+  background: var(--gold);
+  color: #00133A;
+  font-size: clamp(22px, 2.4vw, 30px);
+  text-align: center;
+  text-decoration: none;
+}
+@media (max-width: 520px) {
+  .offers .offers__contact {
+    min-height: 76px;
+    padding: 20px 28px;
+  }
+}
+.offers__contact:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 4px;
+}
+
+/* The full event program is the final content panel before contacts. */
+.corporate-program__panel {
+  padding: var(--panel-padding);
+  border: 1px solid rgba(255, 255, 255, .25);
+  border-radius: 28px;
+  background: linear-gradient(135deg, #102a56, #00133a);
+}
+.corporate-program .section-head { margin-bottom: var(--action-gap); }
+.corporate-program .section-head h2 { margin-top: 0; }
+.corporate-program__pages {
+  display: grid;
+  gap: var(--card-gap);
+}
+.corporate-program__pages a {
+  display: block;
+  min-width: 0;
+}
+.corporate-program__pages img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.corporate-program__pages a:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 4px;
+}
+.corporate-program__download {
+  display: flex;
+  width: fit-content;
+  max-width: 100%;
+  margin: var(--action-gap) auto 0;
+  text-align: center;
+  padding: 16px 24px;
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  color: var(--gold-2);
+  text-decoration: none;
+  font-weight: 800;
+}
+.corporate-program__download:hover { background: rgba(234, 180, 92, .12); }
+.corporate-program__download:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+
+
 /* Compact single-column callback form. */
 dialog.booking-modal {
   width: min(520px, calc(100% - 24px));
