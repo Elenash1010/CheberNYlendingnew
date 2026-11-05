@@ -2533,11 +2533,14 @@ body .header .header-request,
 .corporate-program__pages a {
   display: block;
   min-width: 0;
+  overflow: hidden;
 }
 .corporate-program__pages img {
   display: block;
-  width: 100%;
+  width: calc(100% + 8px);
+  max-width: none;
   height: auto;
+  margin: -4px;
 }
 .corporate-program__pages a:focus-visible {
   outline: 3px solid var(--gold);
