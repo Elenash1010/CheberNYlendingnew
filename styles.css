@@ -1091,7 +1091,7 @@ body {
 
 main {
   position: relative;
-  background: #00133A url('assets/web/background-seamless.svg') center top / 100% auto repeat-y;
+  background: #00133A url('assets/web/background-seamless.svg') center -320px / 100% auto repeat-y;
 }
 
 main::before {
@@ -1106,7 +1106,7 @@ main::before {
 
 @media (max-width: 780px) {
   main {
-    background: #00133A url('assets/web/background-seamless.svg') center top / 100% auto repeat-y;
+    background: #00133A url('assets/web/background-seamless.svg') center -160px / 100% auto repeat-y;
     isolation: isolate;
   }
 
@@ -1122,7 +1122,8 @@ main::before {
 
 .hall-intro__panel,
 .offers > .container,
-.venues > .container {
+.venues > .container,
+.corporate-program__panel {
   padding: 62px 32px 54px;
   border: 1px solid rgba(244, 251, 255, .9);
   border-radius: 32px;
@@ -2493,7 +2494,8 @@ body .header .header-request,
     text-align: center;
   }
 }
-.offers .offers__contact {
+.offers .offers__contact,
+.corporate-program__download {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2505,62 +2507,74 @@ body .header .header-request,
   font-size: clamp(22px, 2.4vw, 30px);
   text-align: center;
   text-decoration: none;
+  font-weight: 800;
+  line-height: 1.35;
+  letter-spacing: .04em;
+  text-transform: uppercase;
 }
 @media (max-width: 520px) {
-  .offers .offers__contact {
+  .offers .offers__contact,
+  .corporate-program__download {
     min-height: 76px;
     padding: 20px 28px;
   }
 }
-.offers__contact:focus-visible {
+.offers__contact:focus-visible,
+.corporate-program__download:focus-visible {
   outline: 3px solid #fff;
   outline-offset: 4px;
 }
 
-/* The full event program is the final content panel before contacts. */
+/* Each program page is an independent content section. */
 .corporate-program__panel {
   padding: var(--panel-padding);
-  border: 1px solid rgba(255, 255, 255, .25);
-  border-radius: 28px;
-  background: linear-gradient(135deg, #102a56, #00133a);
+  background: linear-gradient(135deg, rgba(0, 19, 58, .72), rgba(0, 19, 58, .54) 55%, rgba(0, 19, 58, .66));
 }
-.corporate-program .section-head { margin-bottom: var(--action-gap); }
+.corporate-program .section-head {
+  width: 100%;
+  max-width: none;
+  margin: 0 0 var(--action-gap);
+  text-align: center;
+}
 .corporate-program .section-head h2 { margin-top: 0; }
-.corporate-program__pages {
-  display: grid;
-  gap: var(--card-gap);
+#program-title {
+  margin: 0;
+  color: var(--gold-2);
+  font-size: clamp(40px, 5.5vw, 80px);
+  font-weight: 800;
+  line-height: 1.15;
+  text-wrap: balance;
+  text-shadow: 0 2px 12px rgba(0, 10, 35, .8);
 }
-.corporate-program__pages a {
+.corporate-program__panel:has(#program-title) {
+  background: linear-gradient(135deg, rgba(0, 19, 58, .94), rgba(0, 19, 58, .9));
+}
+.offers .offers__contact { margin-top: var(--action-gap); }
+.corporate-program__page {
   display: block;
   min-width: 0;
   overflow: hidden;
+  border-radius: 28px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, .25);
 }
-.corporate-program__pages img {
+.corporate-program__page img {
   display: block;
   width: calc(100% + 8px);
   max-width: none;
   height: auto;
   margin: -4px;
 }
-.corporate-program__pages a:focus-visible {
+.corporate-program__page:focus-visible {
   outline: 3px solid var(--gold);
   outline-offset: 4px;
 }
 .corporate-program__download {
-  display: flex;
   width: fit-content;
   max-width: 100%;
   margin: var(--action-gap) auto 0;
-  text-align: center;
-  padding: 16px 24px;
   border: 1px solid var(--gold);
-  border-radius: 999px;
-  color: var(--gold-2);
-  text-decoration: none;
-  font-weight: 800;
 }
-.corporate-program__download:hover { background: rgba(234, 180, 92, .12); }
-.corporate-program__download:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+.corporate-program__download:hover { box-shadow: 0 0 20px rgba(234, 180, 92, .2); }
 
 
 /* Compact single-column callback form. */
